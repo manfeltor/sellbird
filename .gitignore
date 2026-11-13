@@ -58,3 +58,27 @@ sellbird.yaml.*
 harvey.local.yaml
 harvey.local.yaml.*
 harvey.yaml.*
+
+# --- Local additions ---
+# Any .env variant (backups, .env.local...) but keep the template tracked
+.env.*
+!.env.example
+# Exports with real prospect data (`sellbird export` writes prospects.csv to the root by default)
+prospects.csv
+*.csv
+!tests/**/*.csv
+# Logs, pid and lock files outside data/
+*.log
+*.pid
+*.lock
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local internal docs (business-specific, never commit)
+REVISION_COMERCIAL.md
+SOLICITUD_SYSADMIN.md
+REPORTE_GERENCIA.md
