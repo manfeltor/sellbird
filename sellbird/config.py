@@ -84,6 +84,13 @@ class ICPConfig(BaseModel):
     # Each variant runs in every city alongside the industry itself, so the
     # estimate grows with it. Empty → each industry is its own one search.
     keyword_variants: dict[str, list[str]] = {}
+    # Country and language that search discovery runs in, so a search for
+    # "importador Buenos Aires" is Google Argentina in Spanish rather than
+    # Google US in English. search_country is a two-letter code ("ar"),
+    # search_language a language code ("es"). Empty → each provider's default
+    # (US, English).
+    search_country: str = ""
+    search_language: str = ""
 
 
 class WarmupConfig(BaseModel):
